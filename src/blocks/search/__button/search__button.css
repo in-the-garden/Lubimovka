@@ -1,0 +1,12 @@
+.search__button {
+    margin: 0;
+    padding: 0 0 7px;
+    min-width: 120px;
+    border-width: 0 0 1px 1px;
+    border-color: #242424;
+    background: inherit;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
