@@ -19,4 +19,8 @@
 @import url(./blocks/play/__author/play__author.css);
 @import url(./blocks/play/__info/play__info.css);
 
+@import url(./blocks/authors/authors.css);
+
 @import url(./blocks/author/author.css);
+@import url(./blocks/author/__letter/author__letter.css);
+@import url(./blocks/author/__name/author__name.css);

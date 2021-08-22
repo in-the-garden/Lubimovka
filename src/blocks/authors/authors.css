@@ -1,0 +1,17 @@
+.authors {
+    margin: 0;
+    position: absolute;
+    left: 69%;
+}
+
+@media (max-width: 1370px){
+    .authors {
+        left: 75%;
+    }  
+}
+
+@media (max-width: 1270px){
+    .authors {
+        left: 77%;
+    }  
+}
