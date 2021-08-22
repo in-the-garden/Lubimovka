@@ -1,26 +1,34 @@
+import React, { useEffect } from 'react';
 import '../App.css';
-import iconImg from '../images/arrow-right.svg'
+import iconImg from '../images/arrow-right.svg';
+import { Play } from './Play';
+import data from '../constants/data.json'
+import { SearchForm } from './SearchForm';
+import { Author } from './Author';
+
 
 function App() {
+  const [plays, setPlays] = React.useState(data.result);
+  const [value, setValue] = React.useState('');
+
+  function handleSearchPlay(search) {
+    setValue(search);
+  }
+
+  const filteredPlays = plays.filter(play => {
+    return play.title.toLowerCase().includes(value.toLowerCase());
+  });
+
   return (
     <div className="container">
-      <div className="search">
-        <h1 className="search__title">Поиск</h1>
-        <form className="search__form">
-          <input className="search__input" type="text" placeholder="Август"/>
-          <button className="search__button" type="button">
-            <img className="search__icon" src={iconImg}/>
-            <p className="search__button-name">искать</p>
-          </button>
-        </form>
-      </div>
-      <div>
-        <div className="plays">
-
-        </div>
-        <div className="authors">
-
-        </div>
+      <SearchForm iconImg={iconImg} onSearch={handleSearchPlay}/> 
+      <div className="results">
+        <section className="plays">
+          {filteredPlays.map(playData => <Play play={playData} key={playData._id}/>)}
+        </section>
+        <section className="authors">
+          <Author />
+        </section>
       </div>
     </div>
   );

@@ -1,0 +1,9 @@
+.plays {
+    max-width: 779px;
+    margin: 0;
+    padding: 0 0 0 121px;
+    font-style: normal;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 240px));
+    gap: 15px 29px;
+}
