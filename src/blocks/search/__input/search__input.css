@@ -9,3 +9,15 @@
     background: inherit;
     outline: none;
 }
+
+@media (max-width: 650px){
+    .search__input {
+        min-width: 270px;;
+    }  
+}
+
+@media (max-width: 460px){
+    .search__input {
+        min-width: 160px;;
+    }  
+}

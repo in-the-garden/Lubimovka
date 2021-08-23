@@ -4,3 +4,10 @@
     line-height: 28px;
     font-weight: 300;
 }
+
+@media (max-width: 750px){
+    .author__name {
+        font-size: 15px;
+        line-height: 23px;
+    }  
+}

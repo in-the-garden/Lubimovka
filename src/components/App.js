@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import '../App.css';
 import iconImg from '../images/arrow-right.svg';
 import { Play } from './Play';
-import data from '../constants/data.json'
+import data from '../data/data.json'
 import { SearchForm } from './SearchForm';
 import { Letter } from './Letter';
 
@@ -20,30 +20,19 @@ function App() {
       return play.title.toLowerCase().includes(value.toLowerCase());}
   });
 
-  const filteredAuthors = plays.filter(play => {
+  const filteredPlaysByRequest = plays.filter(play => {
     if (value !== '') {
-      return play.author_lastName.toLowerCase().includes(value.toLowerCase());}
+      return (play.author_lastName.toLowerCase().includes(value.toLowerCase()) || play.author_firstName.toLowerCase().includes(value.toLowerCase()));}
   });
-
-  //const letters = Array.from(new Set(filteredAuthors.map(author => {
-  //  return author.author_lastName[0];
-  //}))).sort();
-  //const selectedAuthors= filteredAuthors.map(author => {
-  //    author.firstLetter = author.author_lastName[0];
-  //    return author;
-  //  });
-  
-  const letters = Array.from(new Set(filteredAuthors.map(author => {
-      return author.author_lastName[0];
+ 
+  const letters = Array.from(new Set(filteredPlaysByRequest.map(playData => {
+      return playData.author_lastName[0];
     }))).sort();
   
-  const selectedAuthors = letters.forEach(letter => {
-    filteredAuthors.filter(author => {
-      author.author_lastName.indexOf(`${letter}`);
-      return author;
-    })
-  })
-  console.log(selectedAuthors);
+  const authors = Array.from(new Set(filteredPlaysByRequest.map(playData => {
+    return `${playData.author_lastName} ${playData.author_firstName}`;
+  }))).sort();
+
 
   return (
     <div className="container">
@@ -53,7 +42,7 @@ function App() {
           {filteredPlays.map(playData => <Play play={playData} key={playData._id}/>)}
         </section>
         <section className="authors">
-          {letters.map((letter, index) => <Letter letter={letter} key={index} authorsInfo={filteredAuthors}/>)}
+          {letters.map((letter, index) => <Letter letter={letter} key={index} authors={authors}/>)}
         </section>
       </div>
     </div>

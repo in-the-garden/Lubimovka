@@ -6,3 +6,16 @@
     font-style: normal;
     font-weight: 300;
 }
+
+@media (max-width: 860px){
+    .search__form {
+        margin: 61px 0 0;
+    }  
+}
+
+
+@media (max-width: 460px){
+    .search__form {
+        margin: 41px 0 0;
+    }  
+}

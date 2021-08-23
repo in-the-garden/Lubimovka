@@ -4,6 +4,54 @@
     padding: 0 0 0 121px;
     font-style: normal;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 240px));
-    gap: 15px 29px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 240px));
+    gap: 29px;
+}
+
+@media (max-width: 1270px){
+    .plays {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 240px))
+    }  
+}
+
+@media (max-width: 1200px){
+    .plays {
+        max-width: 509px
+    }  
+}
+
+@media (max-width: 915px){
+    .plays {
+        max-width: 269px
+    }  
+}
+
+@media (max-width: 780px){
+    .plays {
+        padding: 0 0 0 85px;
+    }  
+}
+
+@media (max-width: 650px){
+    .plays {
+        padding: 0 0 0 50px;
+    }  
+}
+
+@media (max-width: 550px){
+    .plays {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 200px))
+    }  
+}
+
+@media (max-width: 460px){
+    .plays {
+        padding: 0 0 0 20px;
+    }  
+}
+
+@media (max-width: 400px){
+    .plays {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 160px))
+    }  
 }

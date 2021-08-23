@@ -4,3 +4,10 @@
     line-height: 22px;
     font-weight: 300;
 }
+
+@media (max-width: 550px){
+    .play__info {
+        font-size: 12px;
+        line-height: 17px;
+    }  
+}
